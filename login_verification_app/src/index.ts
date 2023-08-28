@@ -88,14 +88,14 @@ app.post('/signup', async (req: Request, res: Response) => {
 
 
         // Twilio create message
-        // client.messages
-        //     .create({
-        //         body: `Your phone verification OTP: ${phoneOTP}`,
-        //         from: '+18159402645', // Your Twilio phone number
-        //         to: `+91${ph_no}`,
-        //     })
-        //     .then((message: any) => console.log(`Message sent with SID: ${message.sid}`))
-        //     .catch((error: Error) => console.error('Error sending message:', error));
+        client.messages
+            .create({
+                body: `Your phone verification OTP: ${phoneOTP}`,
+                from: '+18159402645', // Your Twilio phone number
+                to: `+91${ph_no}`,
+            })
+            .then((message: any) => console.log(`Message sent with SID: ${message.sid}`))
+            .catch((error: Error) => console.error('Error sending message:', error));
 
 
         // Generate JWT token
